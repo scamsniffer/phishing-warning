@@ -90,7 +90,7 @@ function start() {
 
   const newIssueUrl =
     hashQueryString.get('newIssueUrl') ||
-    `https://github.com/scamsniffer/eth-phishing-detect/issues/new`;
+    `https://github.com/scamsniffer/scam-database/issues/new`;
   const newIssueParams = `?title=[Legitimate%20Site%20Blocked]%20${encodeURIComponent(
     suspectHostname,
   )}&body=${encodeURIComponent(suspectHref)}`;
