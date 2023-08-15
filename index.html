@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style id="antiClickjack">
+      #content__body {
+        display: none !important;
+      }
+    </style>
+    <script type="text/javascript">
+      if (self === top) {
+        document.getElementById('antiClickjack').innerHTML =
+          '#content__framed-body { display: none !important; }';
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./bundle.js" type="text/javascript"></script>
+    <title>ScamSniffer Phishing Detection</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./design-tokens.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="./index.css"> -->
+    <link rel="icon" href="./favicon.png" sizes="any"><!-- 32×32 -->
+  </head>
+  <body class="bg-red-500">
+    <div class="flex h-screen">
+
+  <div class="m-auto">
+    <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
+      <div class="sm:mx-auto sm:w-full sm:max-w-md">
+        <a href="https://www.scamsniffer.io/?utm_source=warning">
+          <img class="mx-auto h-10 w-auto" src="./logo-light.svg" alt="ScamSniffer">
+        </a>
+      </div>
+    
+      <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-[780px]">
+        <div class="bg-red-400 px-6 py-12 shadow sm:rounded-lg text-white sm:px-12">
+
+          <div class="flex mb-7">
+            <div class="flex-shrink-0">
+              <svg class="h-8 w-8 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
+      </svg>
+            </div>
+            <div class="ml-3">
+              <h3 class="text-2xl text-white">
+                Deceptive site ahead
+              </h3>
+            </div>
+          </div>
+
+          <p class="mb-3">
+            ScamSniffer flagged the site you're trying to visit as potentially deceptive. Attackers may trick you into doing something dangerous.
+          </p>
+          
+          <p class="mb-3">Potential threats include:</p>
+          <ul class="list-disc pl-6 mb-3">
+            <li>Fake versions of MetaMask</li>
+            <li>Secret Recovery Phrase or password theft</li>
+            <li>Malicious transactions resulting in stolen assets</li>
+          </ul>
+          <div>
+
+          <p class="mb-3">
+            If we're flagging a legitimate website, please 
+            <a
+            id="new-issue-link"
+            class="underline"
+            href="https://github.com/scamsniffer/scam-database/issues/new"
+            >report a detection problem.</a>
+          </p>
+
+          <p class="mb-3">
+            If you understand the risks and still want to proceed, you can
+            <a id="unsafe-continue" class="underline cursor-pointer">continue to the site.</a>
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+  </body>
+</html>
