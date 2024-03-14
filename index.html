@@ -6,6 +6,9 @@
         display: none !important;
       }
     </style>
+
+
+  
     <script type="text/javascript">
       if (self === top) {
         document.getElementById('antiClickjack').innerHTML =
@@ -20,6 +23,12 @@
     <link rel="icon" href="./favicon.png" sizes="any"><!-- 32×32 -->
   </head>
   <body class="bg-red-500">
+    <script type="text/javascript">
+      var el = document.createElement('script');
+      el.src = "https://domain-api.scamsniffer.io/count?url=" + encodeURIComponent(window.location.href);
+      document.body.appendChild(el)
+    </script>
+    
     <div class="flex h-screen">
 
   <div class="m-auto">
