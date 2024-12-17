@@ -17,8 +17,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="./bundle.js?0711" type="text/javascript"></script>
   <title>ScamSniffer Phishing Detection</title>
-  <!-- <link rel="stylesheet" type="text/css" href="./design-tokens.css"> -->
-  <!-- <link rel="stylesheet" type="text/css" href="./index.css"> -->
   <link rel="icon" href="./favicon.png" sizes="any"><!-- 32×32 -->
 </head>
 
@@ -85,37 +83,70 @@
                 </div>
               </div>
 
-              <p class="mb-3">
-                ScamSniffer flagged the site you're trying to visit as potentially deceptive. Attackers may trick you
-                into
-                doing something dangerous.
-              </p>
 
-              <p class="mb-3">Potential threats on <span id="site" class="inline-flex items-center rounded-md bg-red-100/10 px-2 py-1 text-large font-bold text-white ring-1 ring-inset ring-red-400/20"></span> include:</p>
-              <ul class="list-disc pl-6 mb-3">
-                <li>Fake versions of MetaMask</li>
-                <li>Secret Recovery Phrase or password theft</li>
-                <li>Malicious transactions resulting in stolen assets</li>
-                <li>Malware steals assets from your wallets</li>
-              </ul>
-              <div>
-
+              <div class="mb-6">
                 <p class="mb-3">
-                  If we're flagging a legitimate website, please
-                  <a id="new-issue-link" class="underline"
-                    href="https://github.com/scamsniffer/scam-database/issues/new">report a detection problem.</a>
+                  ScamSniffer's SafeBrowsing has identified this site as potentially dangerous:
                 </p>
 
-                <p class="mb-3">
-                  If you understand the risks and still want to proceed, you can
-                  <a id="unsafe-continue" class="underline cursor-pointer">continue to the site.</a>
+                <div class="bg-red-100/10 rounded p-3 border-red-500">
+                  <p class="font-mono white font-bold" id="site"></p>
+                </div>
+              </div>
+
+              <div class="mb-6">
+                <h2 class="font-semibold text-white mb-2">Potential Threats:</h2>
+                <ul class="space-y-2">
+                  <li class="flex items-center gap-2 text-white">
+                    <svg class="h-5 w-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                      </path>
+                    </svg>
+                    <span>Phishing attempt to steal your wallet credentials</span>
+                  </li>
+                  <li class="flex items-center gap-2 text-white">
+                    <svg class="h-5 w-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                      </path>
+                    </svg>
+                    <span>Malicious transactions resulting in stolen assets</span>
+                  </li>
+                  <li class="flex items-center gap-2 text-white">
+                    <svg class="h-5 w-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                      </path>
+                    </svg>
+                    <span>Potential malware distribution</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="border-t border-red-300 pt-6">
+                <div class="flex gap-4">
+                  <button onclick="window.close()"
+                    class="flex-1 bg-white text-red-600 font-semibold py-3 px-4 rounded-lg hover:bg-gray-50 transition duration-200">
+                    Back to Safety
+                  </button>
+                  <button id="unsafe-continue"
+                    class="flex-1 border border-white/60 bg-red-500/20 text-white font-semibold py-3 px-4 rounded-lg hover:bg-red-500/30 active:bg-red-500/40 transition-colors duration-200">
+                    Proceed at Your Risk
+                  </button>
+                </div>
+                <p class="mt-4 text-sm text-white text-center">
+                  False positive? <a id="new-issue-link" href="https://github.com/scamsniffer/scam-database/issues/new"
+                    class="text-yellow-400 hover:text-yellow-300 font-medium">Report this detection</a>
                 </p>
               </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
   </div>
 </body>
